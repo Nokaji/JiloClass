@@ -1,0 +1,38 @@
+:root{
+    --color-principal: #3d8bfd;
+    --color-primary: white;
+    --color-secondary: black;
+    --navbar-shadow: #303030;
+}
+.navbar a.navbar-brand{
+    background-color: var(--color-principal);
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    color: var(--color-primary);
+    font-size: 20px;
+}
+
+.navbar, .navbar li{
+    box-shadow: var(--navbar-shadow);
+    list-style-type: none;
+}
+
+.navbar li.nav-item a.navbar-sign-up{
+    background: linear-gradient(312deg, rgba(123,62,195,1) 0%, rgba(49,125,176,1) 100%);
+    padding: 10px 10px;
+    font-size: 17px;
+    border-radius: 5px;
+    color: var(--color-primary);
+}
+
+.navbar li a.navbar-link{
+    text-decoration-line: none;
+    color: var(--color-principal);
+}
+@media screen and (max-width: 1023px){
+
+}
+
+@media screen and (min-width: 1024px){
+    
+}
