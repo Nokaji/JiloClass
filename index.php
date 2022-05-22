@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="src/css/index.css">
 </head>
 <body>
-<header>
-
-</header>
 <?php include 'src/includes/navbar.php';?>
+<header><img src="src/img/learn.png" width="450" height="450"></header>
 </body>
 <script src="src/js/navbar.js"></script>
 </html>
