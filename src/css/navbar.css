@@ -18,12 +18,23 @@
 }
 
 .navbar li.nav-item a.navbar-sign-up{
-    background: linear-gradient(312deg, rgba(123,62,195,1) 0%, rgba(49,125,176,1) 100%);
+    background: linear-gradient(312deg, rgb(119, 61, 255) 0%, rgba(49,125,176,1) 100%);
     padding: 10px 10px;
     font-size: 17px;
     border-radius: 5px;
     color: var(--color-primary);
+    margin-right: 15px;
 }
+
+.navbar li.nav-item a.navbar-sign-in{
+    padding: 10px 10px;
+    color: var(--color-secondary);
+    border: solid 1px var(--color-secondary);
+    border-radius: 5px;
+    transition: .5s ease;
+}
+.navbar li.nav-item a.navbar-sign-in:hover{border: solid 1px#3d8bfd;}
+.navbar li.nav-item a.navbar-sign-in:focus{background-color: #3d8afd0e;}
 
 .navbar li a.navbar-link{
     text-decoration-line: none;
