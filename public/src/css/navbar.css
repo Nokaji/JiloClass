@@ -12,6 +12,10 @@
     font-size: 20px;
 }
 
+.navbar{
+    box-shadow: 1px 15px 1px var(--color-secondary);
+}
+
 .navbar, .navbar li{
     box-shadow: var(--navbar-shadow);
     list-style-type: none;
