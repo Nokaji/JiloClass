@@ -1,6 +1,6 @@
 <?php
 define('HOST', 'localhost'); // TODO changer l'url
-define('DB_NAME', 'lunarmc');//TODO tout changer
+define('DB_NAME', 'jiloclass');//TODO tout changer
 define('USER', 'root');
 define('PASS', '');
 try{
@@ -9,5 +9,4 @@ try{
 } catch(PDOExecption $e){
     echo $e;
 }
-
 ?>
