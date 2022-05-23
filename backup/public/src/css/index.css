@@ -7,16 +7,16 @@ header{
     header{
         justify-content: space-between;
         flex-direction: row;
+        height: 550px;
     }
-
     header .header-end{
-        margin-right: 5%;
-        height: 600px;
-        width: 850px;
+        margin-right: 10%;
+        height: 500px;
+        width: 750px;
     }
-
     header .header-start{
-        margin-top: 250px;
+        margin-top: 200px;
+        margin-left: 15%;
         width: 150%;
     }
 }
