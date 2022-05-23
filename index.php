@@ -13,6 +13,7 @@
         <center>
             <h1 class="title">JiloClass</h1>
             <p class="text">Apprennez à Coder et Faites apprendre aux autres</p>
+            <a class="start" href="register.php">Commencer</a>
         </center>
     </div>
     <img class="header-end" src="src/img/learn.png">

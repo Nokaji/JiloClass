@@ -1,15 +1,9 @@
 :root{
     --color-principal: #3d8bfd;
+    --color-principal-hover: #3d8afdc2;
     --color-primary: white;
     --color-secondary: black;
     --navbar-shadow: #303030;
-}
-.navbar a.navbar-brand{
-    background-color: var(--color-principal);
-    padding: 5px 15px 5px 15px;
-    border-radius: 5px;
-    color: var(--color-primary);
-    font-size: 20px;
 }
 
 .navbar{
