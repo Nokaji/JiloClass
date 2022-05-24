@@ -1,0 +1,10 @@
+input[type="submit"]{
+    padding: 10px 10px;
+    color: var(--color-secondary);
+    border: solid 1px var(--color-secondary);
+    border-radius: 5px;
+    transition: .5s ease;
+}
+
+.navbar li.nav-item a.navbar-sign-in:hover{border: solid 1px#3d8bfd;}
+.navbar li.nav-item a.navbar-sign-in:focus{background-color: #3d8afd0e;}

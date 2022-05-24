@@ -2,68 +2,83 @@
 session_start();
 
 if(isset($_SESSION['id'])){
-	header("Location: index.php");
+    header('Location: index');
 }
 
-require_once
- 
+include 'src/includes/database.php';
+
 if(isset($_POST['forminscription'])) {
-    $prenom = htmlspecialchars($_POST['prenom']);
+    $pseudo = htmlspecialchars($_POST['pseudo']);
     $email = htmlspecialchars($_POST['email']);
-    $paiement = htmlspecialchars($_POST['paiement']);
     $mdp = sha1($_POST['mdp']);
     $mdp2 = sha1($_POST['mdp2']);
-    if(!empty($_POST['prenom']) AND !empty($_POST['email']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
-        $prenomlength = strlen($prenom);
-        $namelenght = strlen($name);
-        if($prenomlength <= 255) {
+    if(!empty($_POST['pseudo']) AND !empty($_POST['email']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
+        $pseudolength = strlen($pseudo);
+        if($pseudolength <= 255) {
             if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $reqmail = $bdd->prepare("SELECT * FROM membres WHERE email = ?");
             $reqmail->execute(array($email));
             $mailexist = $reqmail->rowCount();
             if($mailexist == 0) {
                 if($mdp == $mdp2) {
-                    $insertmbr = $bdd->prepare("INSERT INTO membres(prenom, email, motdepasse, paiement) VALUES(?, ?, ?, ?)");
-                    $insertmbr->execute(array($prenom, $email, $mdp, $paiement));
-
-                    $erreur = "Votre compte a bien été créé regarde dans votre boite mail pour confirmer votre compte puis connectez vous";
+                    $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, email, motdepasse) VALUES(?, ?, ?)");
+                    $insertmbr->execute(array($pseudo, $email, $mdp));
+                    $color = "green";
+                    $erreur = "Votre compte a bien été créé !";
                 } else {
+                    $color = "red";
                     $erreur = "Vos mots de passes ne correspondent pas !";
                 }
             } else {
+                $color = "red";
                 $erreur = "Adresse mail déjà utilisée !";
             }
         } else {
+            $color = "red";
         $erreur = "Votre adresse mail n'est pas valide !";
         }
     } else {
+        $color = "red";
         $erreur = "Votre pseudo ne doit pas dépasser 255 caractères !";
     }
 } else {
+    $color = "red";
     $erreur = "Tous les champs doivent être complétés !";
 }
 }
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <base href="/"/>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/register.css">
     <title>Inscription | JiloClass</title>
+    <link rel="stylesheet" href="src/css/form.css">
 </head>
 <body>
-<div class="containerForm">
-<form class="box" method="post">
-  <h1>Inscription</h1>
-  <input type="text" name="pseudo" placeholder="Pseudo" class="inputR">
-  <input type="email" name="email" placeholder="email" class="inputR">
-  <input type="password" name="mdp" placeholder="mot de passe (min 5 caractères)" class="inputR"><span class="eye"></span>
-  <input type="password" name="mdpConf" placeholder="confirmer le mot de passe" class="inputR"><span class="correctmdp"></span>
-  <input type="submit" name="submit" value="s'inscrire">
-  <a href="login">J'ai déjà un compte</a>
-</form>
-</div>
+    <?php include "src/includes/navbar.php"; ?>
+    <form id="signupform" method="POST">
+        <div class="col-md-6 form-text">
+            <input id="pseudo" type="text" name="pseudo" placeholder="Surnom" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" required>
+        </div>
+        <div class="form-text">
+            <input id="email" type="email" name="email" placeholder="Addresse E-Mail" value="<?php if(isset($email)) { echo $email; } ?>" required>
+        </div>
+        <div class="form-text">
+            <input id="mdp" type="password" name="mdp" placeholder="Mot de passe" value="<?php if(isset($_POST['mdp'])) { echo $_POST['mdp']; } ?>" required>
+        </div>
+        <div class="form-text">
+            <input id="mdp2" type="password" name="mdp2" placeholder="Confirmation du Mot de passe" value="<?php if(isset($_POST['mdp2'])) { echo $_POST['mdp2']; } ?>" required>
+        </div>
+        <div class="form-button">
+            <button name="forminscription" type="submit" class="">Créé un nouveau compte</button>
+        </div>
+    </form>
+    <?php
+    if(isset($erreur)) {
+        echo '<font color='.$color.'>'.$erreur."</font>";
+    }
+    ?>
 </body>
 </html>

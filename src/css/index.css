@@ -10,9 +10,11 @@ a.start{
     color: var(--color-primary);
     text-decoration: none;
     transition: .5s ease;
+    box-shadow: 2px 2px 2px var(--color-secondary);
 }
 
-a.start:hover{color: white; background-color: var(--color-principal-hover);}
+a.start:hover{color: white;box-shadow: none}
+a.start:focus{background-color: var(--color-principal-hover);}
 
 @media screen and (min-width: 1024px){
     header{
