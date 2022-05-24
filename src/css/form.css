@@ -1,10 +1,24 @@
-input[type="submit"]{
-    padding: 10px 10px;
-    color: var(--color-secondary);
-    border: solid 1px var(--color-secondary);
-    border-radius: 5px;
-    transition: .5s ease;
+form.row{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    width: 65%;
 }
 
-.navbar li.nav-item a.navbar-sign-in:hover{border: solid 1px#3d8bfd;}
-.navbar li.nav-item a.navbar-sign-in:focus{background-color: #3d8afd0e;}
+input{
+    display: block;
+    padding: 10px 10px;
+    border: solid 1px rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+    transition: .5s ease;
+    outline: none;
+}
+
+.label-required:after{
+    content: "*";
+    color: rgb(255, 72, 72);
+    position: absolute;
+    margin-left: 3px;
+}
+input:hover{border-color: gray;}
+input:focus{border-color: #3d8bfd;}
