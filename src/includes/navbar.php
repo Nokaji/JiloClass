@@ -20,17 +20,19 @@
           </ul>
         </li>
       </ul>
-      <ul class="d-flex">
         <?php
         session_start();
 
         if(isset($_SESSION['id'])){
-          echo "<li class='nav-item dropdown'>
+          echo "
+          <div class='topbar-divider'></div>
+          <li class='nav-item dropdown nav-account'>
           <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
             ".$_SESSION['pseudo']."
           </a>
-          <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
+          <ul class='dropdown-menu dropdown-menu-account' aria-labelledby='navbarDropdown'>
             <li><a class='dropdown-item' href='dashboard'>Dashboard</a></li>
+            <li><a class='dropdown-item' href='profil'>Profil</a></li>
             <li><hr class='dropdown-divider'></li>
             <li><a class='dropdown-item' href='logout'>Deconnexion</a></li>
           </ul>
@@ -44,7 +46,6 @@
           </li>";
         }
         ?>
-      </ul>
     </div>
   </div>
 </div>

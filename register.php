@@ -1,11 +1,8 @@
 <?php
-session_start();
 
 if(isset($_SESSION['id'])){
     header('Location: index');
 }
-
-include 'src/includes/database.php';
 
 if(isset($_POST['forminscription'])) {
     $pseudo = htmlspecialchars($_POST['pseudo']);

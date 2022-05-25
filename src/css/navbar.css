@@ -40,10 +40,6 @@
     color: var(--color-principal);
 }
 
-button.btn-account{
-    
-}
-
 @media screen and (max-width: 1023px){
     .navbar li.nav-item{
         margin-top: 25px;
@@ -58,5 +54,19 @@ button.btn-account{
 }
 
 @media screen and (min-width: 1024px){
-
+    .nav-account{
+        margin-right: 2.5%;
+    }
+    .navbar li .dropdown-menu{
+        position: absolute;
+        top: 25px;
+        right: 8%;
+        left: auto;
+    }
+}
+.topbar-divider{
+    width: 0;
+    border-right: 1px solid #e3e6f0;
+    height: calc(4.375rem - 2rem);
+    margin: auto 1rem;
 }

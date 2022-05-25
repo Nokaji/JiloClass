@@ -1,7 +1,7 @@
-ErrorDocument 404 errors/404.php/
-ErrorDocument 403 errors/403.php/
-ErrorDocument 402 errors/402.php/
-ErrorDocument 401 errors/401.php/
+ErrorDocument 404 /errors/404.php
+ErrorDocument 403 /errors/403.php
+ErrorDocument 402 /errors/402.php
+ErrorDocument 401 /errors/401.php
 
 AddDefaultCharset "utf-8"
 
