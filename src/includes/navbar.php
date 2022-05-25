@@ -21,12 +21,29 @@
         </li>
       </ul>
       <ul class="d-flex">
-        <li class="nav-item">
-          <a class="navbar-link navbar-sign-up" href="register">S'inscrire</a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-link navbar-sign-in" onclick="openLogin()">Connexion</a>
-        </li>
+        <?php
+        session_start();
+
+        if(isset($_SESSION['id'])){
+          echo "<li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+            ".$_SESSION['pseudo']."
+          </a>
+          <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
+            <li><a class='dropdown-item' href='dashboard'>Dashboard</a></li>
+            <li><hr class='dropdown-divider'></li>
+            <li><a class='dropdown-item' href='logout'>Deconnexion</a></li>
+          </ul>
+        </li>";
+        }else{
+          echo "<li class='nav-item'>
+          <a class='navbar-link navbar-sign-up' href='register'>S'inscrire</a>
+          </li>
+          <li class='nav-item'>
+          <a class='navbar-link navbar-sign-in' onclick='openLogin()'>Connexion</a>
+          </li>";
+        }
+        ?>
       </ul>
     </div>
   </div>

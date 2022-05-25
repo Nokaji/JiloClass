@@ -9,9 +9,10 @@
 #login.container{
   display: none;
   background: #fff;
-  width: 410px;
+  width: 25%;
   padding: 30px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
 
 #login.container .close-btn{
@@ -33,6 +34,19 @@
 }
 
 #login.container form.row{
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#login.container form.row button[type="submit"].btn{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 1024px){
+  #login.container form.row input.form-control{
+    width: 205%;
+  }
 }

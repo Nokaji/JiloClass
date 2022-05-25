@@ -5,16 +5,19 @@ header{
 
 a.start{
     background-color: var(--color-principal);
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
     color: var(--color-primary);
     text-decoration: none;
     transition: .5s ease;
-    box-shadow: 2px 2px 2px var(--color-secondary);
+    border: solid 1px var(--color-principal);
 }
 
-a.start:hover{color: white;box-shadow: none}
-a.start:focus{background-color: var(--color-principal-hover);}
+a.start:hover{
+    color: var(--color-principal);
+    border: solid 1px var(--color-principal);
+    background: none;
+}
 
 @media screen and (min-width: 1024px){
     header{

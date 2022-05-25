@@ -1,11 +1,5 @@
 <?php
-session_start();
-
 include 'src/includes/database.php';
-
-if(isset($_SESSION['id'])){
-    header('Location: index');
-}
 
 include_once('cookieconnect.php');
 
@@ -28,38 +22,39 @@ if(isset($_POST['formconnexion']))
         $_SESSION['id'] = $userinfo['id'];
         $_SESSION['pseudo'] = $userinfo['pseudo'];
         $_SESSION['email'] = $userinfo['email'];
-        header("Location: clientarea.php");
+        header("Location: dashboard");
       }
-      else
-      {
+      else{
         $erreur = "Mauvais mail ou mot de passe !";
       }
-   }
-   else
-   {
+    }else{
     $erreur = "Tous les champs doivent être complétés !";
    }
 }
 
 ?>
 <div class="container" id="login">
-  <label for="show" class="close-btn fas fa-times" title="close"></label>
+  <label for="show" class="close-btn fas fa-times" onclick="closeLogin()"></label>
   <div class="text">
     Connexion
   </div>
   <form method="post" class="row g-3"> 
     <div class="col-md-6">
-        <label for="email" class="form-label label-required">Email</label>
-        <input type="email" name="email" class="form-control" id="email" value="<?php if(isset($email)) { echo $email; } ?>" required>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" id="email" value="<?php if(isset($email)) { echo $email; } ?>">
     </div>
     <div class="col-md-6">
-        <label for="mdp" class="form-label label-required">Mot de Passe</label>
-        <input type="password" name="mdp" class="form-control" id="mdp" value="<?php if(isset($_POST['mdp'])) { echo $_POST['mdp']; } ?>" required>
+        <label for="mdp" class="form-label">Mot de Passe</label>
+        <input type="password" name="mdp" class="form-control" id="mdp" value="<?php if(isset($_POST['mdp'])) { echo $_POST['mdp']; } ?>">
     </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+    <div class="col-md-6">
+    <input class="form-check-input" name="rememberme" type="checkbox" value="" id="rememberme">
+    <label class="form-check-label" for="rememberme">
+      Se Souvenir de Moi
+    </label>
     </div>
-</form>
+    <button name="formconnexion" type="submit" class="btn btn-primary">Sign in</button>
+  </form>
 <?php
 if(isset($erreur)) {
     echo '<font color="red">'.$erreur."</font>";

@@ -7,9 +7,8 @@ if(!isset($_SESSION['id']) AND isset($_COOKIE['email'],$_COOKIE['motdepasse']) A
    {
       $userinfo = $requser->fetch();
       $_SESSION['id'] = $userinfo['id'];
-      $_SESSION['prenom'] = $userinfo['pseudo'];
+      $_SESSION['pseudo'] = $userinfo['pseudo'];
       $_SESSION['email'] = $userinfo['email'];
-
    }
 }
 ?>

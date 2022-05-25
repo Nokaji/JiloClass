@@ -59,7 +59,7 @@ if(isset($_POST['forminscription'])) {
 </head>
 <body>
     <?php include "src/includes/navbar.php"; ?>
-    <form method="post" class="row g-3">
+    <form method="post" class="row g-3 signup">
         <p class="fs-1">Inscription</p>
         <p class="fs-3">Informations Personnelles</p>
         <div class="col-md-6">
@@ -80,7 +80,7 @@ if(isset($_POST['forminscription'])) {
             <input type="password" name="mdp2" class="form-control" id="mdp2" value="<?php if(isset($_POST['mdp2'])) { echo $_POST['mdp2']; } ?>" required>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button name="formconnexion" type="submit" class="btn btn-primary">Sign in</button>
         </div>
     </form>
     <?php
