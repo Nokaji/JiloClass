@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_SESSION['id'])){
     header('Location: index');
 }
@@ -32,7 +31,7 @@ if(isset($_POST['forminscription'])) {
             }
         } else {
             $color = "red";
-        $erreur = "Votre adresse mail n'est pas valide !";
+            $erreur = "Votre adresse mail n'est pas valide !";
         }
     } else {
         $color = "red";
@@ -77,13 +76,13 @@ if(isset($_POST['forminscription'])) {
             <input type="password" name="mdp2" class="form-control" id="mdp2" value="<?php if(isset($_POST['mdp2'])) { echo $_POST['mdp2']; } ?>" required>
         </div>
         <div class="col-12">
-            <button name="formconnexion" type="submit" class="btn btn-primary">Sign in</button>
+            <button name="forminscription" type="submit" class="btn btn-primary">Sign in</button>
+            <?php
+            if(isset($erreur)) {
+                echo '<font color='.$color.'>'.$erreur."</font>";
+            }
+            ?>
         </div>
     </form>
-    <?php
-    if(isset($erreur)) {
-        echo '<font color='.$color.'>'.$erreur."</font>";
-    }
-    ?>
 </body>
 </html>

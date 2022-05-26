@@ -1,3 +1,6 @@
+<?php
+include 'src/includes/database.php';
+?>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">

@@ -1,6 +1,4 @@
 <?php
-include 'src/includes/database.php';
-
 include_once('cookieconnect.php');
 
 if(isset($_POST['formconnexion']))
