@@ -3,6 +3,8 @@ if(isset($_SESSION['id'])){
     header('Location: index');
 }
 
+include 'src/includes/database.php';
+
 if(isset($_POST['forminscription'])) {
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $email = htmlspecialchars($_POST['email']);
@@ -55,25 +57,26 @@ if(isset($_POST['forminscription'])) {
 </head>
 <body>
     <?php include "src/includes/navbar.php"; ?>
+    <?php include 'login.php'?>
     <form method="post" class="row g-3 signup">
         <p class="fs-1">Inscription</p>
         <p class="fs-3">Informations Personnelles</p>
         <div class="col-md-6">
             <label for="pseudo" class="form-label label-required">Surnom</label>
-            <input type="text" name="pseudo" class="form-control" id="pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" required>
+            <input type="text" name="pseudo" class="form-control" id="pseudo" value="<?php if(isset($pseudo))?>" required>
         </div>
         <div class="col-md-6">
             <label for="email" class="form-label label-required">Email</label>
-            <input type="email" name="email" class="form-control" id="email" value="<?php if(isset($email)) { echo $email; } ?>" required>
+            <input type="email" name="email" class="form-control" id="email" value="<?php if(isset($email))?>" required>
         </div>
         <p class="fs-3">Sécurité du Compte</p>
         <div class="col-md-6">
             <label for="mdp" class="form-label label-required">Mot de Passe</label>
-            <input type="password" name="mdp" class="form-control" id="mdp" value="<?php if(isset($_POST['mdp'])) { echo $_POST['mdp']; } ?>" required>
+            <input type="password" name="mdp" class="form-control" id="mdp" value="<?php if(isset($_POST['mdp'])) ?>" required>
         </div>
         <div class="col-md-6">
             <label for="mdp2" class="form-label label-required">Confirmation du Mot de Passe</label>
-            <input type="password" name="mdp2" class="form-control" id="mdp2" value="<?php if(isset($_POST['mdp2'])) { echo $_POST['mdp2']; } ?>" required>
+            <input type="password" name="mdp2" class="form-control" id="mdp2" value="<?php if(isset($_POST['mdp2'])) ?>" required>
         </div>
         <div class="col-12">
             <button name="forminscription" type="submit" class="btn btn-primary">Sign in</button>

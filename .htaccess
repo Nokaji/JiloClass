@@ -9,6 +9,10 @@ SetEnv TZ Europe/Paris
 Options All -Indexes
 Options -MultiViews
 RewriteEngine On
+RewriteRule ^account/info$ info.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
+RewriteRule ^(.+)\.php$ http://%{HTTP_HOST}/$1 [R=301,L]

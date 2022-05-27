@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'src/includes/domaine.php';
+include ''.BASE_URL.'src/includes/database.php';
+?>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">

@@ -20,7 +20,7 @@ if(isset($_POST['formconnexion']))
         $_SESSION['id'] = $userinfo['id'];
         $_SESSION['pseudo'] = $userinfo['pseudo'];
         $_SESSION['email'] = $userinfo['email'];
-        header("Location: dashboard");
+        header("Location: index");
       }
       else{
         $erreur = "Mauvais mail ou mot de passe !";
@@ -46,12 +46,12 @@ if(isset($_POST['formconnexion']))
         <input type="password" name="mdp" class="form-control" id="mdp" value="<?php if(isset($_POST['mdp'])) { echo $_POST['mdp']; } ?>">
     </div>
     <div class="col-md-6">
-    <input class="form-check-input" name="rememberme" type="checkbox" value="" id="rememberme">
+    <input class="form-check-input" name="rememberme" type="checkbox" id="rememberme">
     <label class="form-check-label" for="rememberme">
       Se Souvenir de Moi
     </label>
     </div>
-    <button name="formconnexion" type="submit" class="btn btn-primary">Sign in</button>
+    <button name="formconnexion" type="submit" class="btn btn-primary">Se connecter</button>
   </form>
 <?php
 if(isset($erreur)) {
