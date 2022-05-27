@@ -26,8 +26,8 @@
             $reqdata->execute(array($_SESSION['email'], $_SESSION['id'], $_SESSION['pseudo']));
             $reqdata = $reqdata->fetch();
             $roleid = $reqdata['roleid'];
-            $permission = in_array('paneladmin', array($reqdata['permission']));
-            var_dump($permission);
+            $permission = stristr($reqdata['permission'], "paneladmin");
+            $permission2 = stristr($reqdata['permission'], "*");
             $reqrole = $bdd->prepare("SELECT * FROM role WHERE id = ?");
             $reqrole->execute(array($roleid));
             $role = $reqrole->fetch();
@@ -40,7 +40,9 @@
           </a>
           <ul class='dropdown-menu dropdown-menu-account' aria-labelledby='navbarDropdown'>
             <li><a class='dropdown-item' href='dashboard'>Dashboard</a></li>
-            <?php if($role['name'] == 'administrator' && $roleid == 1){echo $admindashboard;}
+            <?php
+            if($role['name'] == 'administrator' && $roleid == 1 OR $permission == $reqdata['permission'] && $permission != false OR $permission2 == $reqdata['permission'] && $permission2 != false)
+            {echo $admindashboard;}
             ?>
             <li><a class='dropdown-item' href='info.php'>Mon Profil</a></li>
             <li><hr class='dropdown-divider'></li>
