@@ -69,8 +69,12 @@
 <link rel="stylesheet" href="src/css/navbar.css">
 <link rel="stylesheet" href="src/fontawesome/css/all.min.css">
 <script>
-  $(window).on("load", function() {
+  function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+  $(window).on("load", async function() {
     $(".loader").fadeOut("slow");
+    await delay(750);
     $('body').css('overflow-y','unset');
-  });
+  });s
 </script>
