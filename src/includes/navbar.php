@@ -22,15 +22,8 @@
       </ul>
         <?php
           if(isset($_SESSION['id'])){
-            $reqdata = $bdd->prepare("SELECT * FROM membres WHERE email = ? AND id = ? AND pseudo = ?");
-            $reqdata->execute(array($_SESSION['email'], $_SESSION['id'], $_SESSION['pseudo']));
-            $reqdata = $reqdata->fetch();
-            $roleid = $reqdata['roleid'];
+            require_once("".BASE_URL."src/includes/permission.php");
             $permission = stristr($reqdata['permission'], "paneladmin");
-            $permission2 = stristr($reqdata['permission'], "*");
-            $reqrole = $bdd->prepare("SELECT * FROM role WHERE id = ?");
-            $reqrole->execute(array($roleid));
-            $role = $reqrole->fetch();
             $admindashboard = "<li><a class='dropdown-item' href='admin'>Panel Admin</a></li>";
           ?>
           <div class='topbar-divider'></div>
