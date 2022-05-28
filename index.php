@@ -11,10 +11,10 @@ include ''.BASE_URL.'src/includes/database.php';
     <title>Accueil | JiloClass</title>
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="src/img/jiloclass.png" type="image/x-icon">
+    <?php include 'src/includes/navbar.php';?>
 </head>
 <body>
-<?php include 'src/includes/navbar.php';?>
-<header>
+    <header>
     <div class="header-start">
         <center>
             <h1 class="title">JiloClass</h1>
@@ -23,7 +23,14 @@ include ''.BASE_URL.'src/includes/database.php';
         </center>
     </div>
     <img class="header-end" src="src/img/learn.png">
-</header>
+    </header>
+    <img src="src/img/wave.svg">
+    <div class="section-hqp-1">
+        <div class="icons-colomns">
+        <i class="fa-solid fa-graduation-cap fa-bounce"></i>
+        <p>Apprenez facilement avec JiloClass</p>
+        </div>
+    </div>
 </body>
 <script src="src/js/navbar.js"></script>
 </html>
