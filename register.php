@@ -3,7 +3,8 @@ if(isset($_SESSION['id'])){
     header('Location: index');
 }
 
-include 'src/includes/database.php';
+include 'src/includes/domaine.php';
+include ''.BASE_URL.'src/includes/database.php';
 
 if(isset($_POST['forminscription'])) {
     $pseudo = htmlspecialchars($_POST['pseudo']);

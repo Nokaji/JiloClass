@@ -6,7 +6,7 @@
     </div>
   </div>
 </div>
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand">
       <img src="src/img/jiloclass.gif" alt="" width="75" height="75" class="d-inline-block align-text-top">
@@ -63,9 +63,9 @@
 </div>
 </nav>
 <?php include("".BASE_URL."login.php"); ?>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="src/js/externe/bootstrap.min.js"></script>
+<script src="src/js/externe/jquery.min.js"></script>
+<link href="src/css/externe/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="src/css/navbar.css">
 <link rel="stylesheet" href="src/fontawesome/css/all.min.css">
 <script>

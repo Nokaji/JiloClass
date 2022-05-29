@@ -1,6 +1,19 @@
 body, html{
     background-color: var(--navbar-shadow);
 }
+
+header{
+  background: linear-gradient(90deg, rgba(15,15,208,1) 0%, rgba(37,163,203,1) 100%);
+}
+
+.navbar .nav-link{
+  color: white;
+}
+
+.navbar{
+  box-shadow: 1px 1px 12px rgb(0, 0, 0, 0.2);
+}
+
 a.start{
     background-color: var(--color-principal);
     padding: 10px 20px 10px 20px;
@@ -100,10 +113,20 @@ a.start:hover{
     }
   }
 /* Wave End */
-.section-hqp-1{display: flex;align-items:center; margin-left: auto;margin-right: auto;}
+.section-hqp-1{display: flex;align-items:center;}
 .icons-colomns{display: flex;align-items:center; flex-direction: column; width: 75%;}
-.icons-colomns p, i{
-    font-size: 25px;
+.icons-colomns p{
+  font-size: 15px;
+}
+
+.icons-colomns i{
+  backface-visibility: hidden !important;
+  font-size: 35px;
+  background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(36,163,189,1) 100%);
+  color: white;
+  border-radius: 35px;
+  padding: 2% 1.5% 2% 1.5%;
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%) !important;
 }
 @media screen and (min-width: 1024px){
     .section-hqp-1{
