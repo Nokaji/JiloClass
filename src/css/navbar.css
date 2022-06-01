@@ -3,6 +3,7 @@
     --color-principal-hover: #3d8afdc2;
     --color-primary: white;
     --color-secondary: black;
+    --color-degrade: linear-gradient(90deg, rgba(15,15,208,1) 0%, rgba(37,163,203,1) 100%);
     --navbar-shadow: #303030;
 }
 
