@@ -8,14 +8,17 @@
 
 .navbar, .navbar li{
     list-style-type: none;
-    color: white;
+}
+
+.navbar{
+    /* box-shadow: 1px 1px 12px rgb(0, 0, 0, 0.2); */
 }
 
 .navbar li.nav-item a.navbar-sign-up{
     padding: 10px 10px;
     font-size: 17px;
     border-radius: 5px;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     margin-right: 15px;
 }
 

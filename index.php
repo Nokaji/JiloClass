@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include 'src/includes/domaine.php';
 include ''.BASE_URL.'src/includes/database.php';
 ?>
@@ -13,8 +14,12 @@ include ''.BASE_URL.'src/includes/database.php';
     <link rel="shortcut icon" href="src/img/jiloclass.png" type="image/x-icon">
 </head>
 <body>
+    <?php include 'src/includes/navbar.php';?>
     <header>
-        <?php include 'src/includes/navbar.php';?>
+        <h1>
+            jiloClass
+        </h1>
+        <p>venez enseigner/apprendre de l'informatique</p>
     </header>
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">

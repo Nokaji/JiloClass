@@ -30,7 +30,7 @@
       </ul>
         <?php
           if(isset($_SESSION['id'])){
-            require_once("".BASE_URL."src/includes/permission.php");
+            require_once("src/includes/permission.php");
             $permission = stristr($reqdata['permission'], "paneladmin");
             $admindashboard = "<li><a class='dropdown-item' href='admin'>Panel Admin</a></li>";
           ?>
@@ -52,17 +52,16 @@
         </li>
         <?php }else{ ?>
           <li class='nav-item'>
-          <a class='navbar-link navbar-sign-up' href='register'>S'inscrire</a>
+          <a class='navbar-link navbar-sign-up' href='register.php'>S'inscrire</a>
           </li>
           <li class='nav-item'>
-          <a class='navbar-link navbar-sign-in' onclick='openLogin()'>Connexion</a>
+          <a class='navbar-link navbar-sign-in' href="login.php">Connexion</a>
           </li> 
         <?php } ?>
     </div>
   </div>
 </div>
 </nav>
-<?php include("".BASE_URL."login.php"); ?>
 <script src="src/js/externe/bootstrap.min.js"></script>
 <script src="src/js/externe/jquery.min.js"></script>
 <link href="src/css/externe/bootstrap.min.css" rel="stylesheet">

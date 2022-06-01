@@ -1,5 +1,11 @@
 <?php
+session_start();
+if(isset($_SESSION['id'])){
+  header("Location: index");
+}
 include_once('cookieconnect.php');
+
+require_once('src/includes/database.php');
 
 if(isset($_POST['formconnexion']))
 {
@@ -21,8 +27,7 @@ if(isset($_POST['formconnexion']))
         $_SESSION['pseudo'] = $userinfo['pseudo'];
         $_SESSION['email'] = $userinfo['email'];
         header("Location: index");
-      }
-      else{
+      }else{
         $erreur = "Mauvais mail ou mot de passe !";
       }
     }else{
@@ -31,8 +36,18 @@ if(isset($_POST['formconnexion']))
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion | JiloClass</title>
+  <link rel="stylesheet" href="src/css/login.css">
+</head>
+<body>
+<?php include "src/includes/navbar.php"; ?>
 <div class="container" id="login">
-  <label for="show" class="close-btn fas fa-times" onclick="closeLogin()"></label>
   <div class="text">
     Connexion
   </div>
@@ -59,5 +74,5 @@ if(isset($erreur)) {
 }
 ?>
 </div>
-<link rel="stylesheet" href="src/css/login.css">
-<script src="src/js/login.js"></script>
+</body>
+</html>

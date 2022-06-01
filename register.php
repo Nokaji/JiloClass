@@ -58,7 +58,6 @@ if(isset($_POST['forminscription'])) {
 </head>
 <body>
     <?php include "src/includes/navbar.php"; ?>
-    <?php include 'login.php'?>
     <form method="post" class="row g-3 signup">
         <p class="fs-1">Inscription</p>
         <p class="fs-3">Informations Personnelles</p>
