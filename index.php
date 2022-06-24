@@ -17,7 +17,8 @@ include ''.BASE_URL.'src/includes/database.php';
     <?php include 'src/includes/navbar.php';?>
     <header>
         <img src="src/img/jiloclass.png"/>
-        <p>venez enseigner/apprendre l'informatique</p>
+        <p>Limité par les restrictions d'âge dans les études ?</p>
+        <p>Venez approfondir vos connaissances et votre savoir-faire</p>
     </header>
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
